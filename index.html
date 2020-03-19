@@ -12,22 +12,37 @@ canvas {
 <body onload="startGame()">
 
 <script>
+var width = 500;
+var height = 500;
+
 function startGame() {
 	sliggaArea.start();
+    snake = new component(width/2, height/2, "black", 20)
+}
+
+function component(x, y, color, size) {
+	this.x = x;
+    this.y = y;
+    ctx = sliggaArea.context;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, size, 0, 2 * Math.PI);
+    ctx.stroke();
 }
 
 var sliggaArea = {
     canvas : document.createElement("canvas"),
     start : function() {
-        this.canvas.width = window.innerWidth;
-        this.canvas.height = window.innerHeight;
+        this.canvas.width = width;
+        this.canvas.height = height;
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
     }
 }
+
+
 </script>
 
-<p>kpppp</p>
+<p>pppp</p>
 
 </body>
 <html>
