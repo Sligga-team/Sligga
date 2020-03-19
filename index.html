@@ -1,14 +1,33 @@
-<!DOCTYPE HTML>
-<html lang = "en">
+<!DOCTYPE html>
+<html>
 <head>
-  <!-- basic.html -->
-  <title>basic.html</title>
-  <meta charset = "UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sligga</title>
+<style>
+canvas {
+  background-color: #5B3256;
+}
+</style>
 </head>
-<body>
-  <h1>kgkg</h1>
-  <p>
-    pp1
-  </p>
+<body onload="startGame()">
+
+<script>
+function startGame() {
+	sliggaArea.start();
+}
+
+var sliggaArea = {
+    canvas : document.createElement("canvas"),
+    start : function() {
+        this.canvas.width = window.innerWidth;
+        this.canvas.height = window.innerHeight;
+        this.context = this.canvas.getContext("2d");
+        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+    }
+}
+</script>
+
+<p>pp</p>
+
 </body>
-</html>
+<html>
