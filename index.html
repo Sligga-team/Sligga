@@ -17,7 +17,7 @@ var height = 500;
 
 function startGame() {
 	sliggaArea.start();
-    snake = new component(width/2, height/2, "black", 20)
+    snake = new component(0, 0, "black", 20)
 }
 
 function component(x, y, color, size) {
@@ -25,7 +25,7 @@ function component(x, y, color, size) {
     this.y = y;
     ctx = sliggaArea.context;
     ctx.beginPath();
-    ctx.arc(this.x, this.y, size, 0, 2 * Math.PI);
+    ctx.arc(width/2, height/2, size, 0, 2 * Math.PI);
     ctx.stroke();
 }
 
